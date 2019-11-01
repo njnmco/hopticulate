@@ -1,1 +1,2 @@
 exportPattern("^[[:alpha:]]+")
+S3method(Ops, hyperopt.pyll.base.Apply)
