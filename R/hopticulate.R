@@ -1,3 +1,17 @@
+#' Hyperopt via reticulate
+#'
+#' `hyperopt` is a popular python package for automated hyperparameter
+#' tuning.
+#'
+#' This package, `hopticulate`, is a minimal wrapper for using hyperopt
+#' through the most excellent reticulate package.
+#'
+#' @name hopticulate
+#' @docType package
+#' @aliases hyperopt
+#'
+#'
+NULL
 
 
 delayedAssign("hyperopt", reticulate::import("hyperopt", delay_load = TRUE))
@@ -6,7 +20,6 @@ delayedAssign("hyperopt", reticulate::import("hyperopt", delay_load = TRUE))
 for(i in c('hp', 'fmin', 'tpe'))
   delayedAssign(i, hyperopt[[i]], eval.env = list2env(list(i=i)))
 
-
 rm(i)
 
 
@@ -14,7 +27,7 @@ Ops.hyperopt.pyll.base.Apply <- function(e1, e2) {
   left  <- inherits(e1, "hyperopt.pyll.base.Apply")
   right <- inherits(e2, "hyperopt.pyll.base.Apply")
 
-  if(!left && ! right){
+  if(!left && !right){
     stop("This should be impossible")
   }
   else if(left) {
