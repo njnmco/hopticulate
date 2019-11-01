@@ -1,0 +1,19 @@
+citHeader("To cite hopticulate in publications use:")
+
+citEntry(
+  entry    = "Article",
+  title    = "Making a Science of Model Search: Hyperparameter Optimization in Hundreds of Dimensions for Vision Architectures",
+  author   = "Bergstra, J. and Yamins, D. and Cox, D. D.",
+  journal  = "Proceedings of the 30th International Conference on International Conference on Machine Learning",
+  year     = 2013,
+  volume   = 28,
+  number   = 1,
+  pages    = "I-115--I-123",
+  url      = "http://dl.acm.org/citation.cfm?id=3042817.3042832",
+  textVersion = paste(
+    "Bergstra, J., Yamins, D., Cox, D. D. (2013) Making a Science of Model Search:",
+    "Hyperparameter Optimization in Hundreds of Dimensions for Vision Architectures.",
+    "To appear in Proc. of the 30th International Conference on Machine Learning (ICML 2013)."
+  )
+)
+

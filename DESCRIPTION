@@ -4,11 +4,12 @@ Title: Hyperparamter Tuning via TPE
 Version: 0.1.0
 Author: Neal Fultz <nfultz@gmail.com>
 Maintainer: Neal Fultz <nfultz@gmail.com>
-Description: Hyperparam tuning using the `hyperopt` python package.
+Description: Hyperparam tuning using the `hyperopt` python package described in Bergens, Yamins and Cox 2013.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-SystemRequirements: python3, hyperopt
+SystemRequirements: hyperopt
+URL: https://github.com/hyperopt/hyperopt
 URL: https://github.com/nfultz/hopticulate
 Imports: 
   utils,
