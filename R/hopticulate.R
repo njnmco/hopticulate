@@ -10,7 +10,7 @@
 #' @docType package
 #' @aliases hyperopt
 #'
-#'
+#' @references \url{https://github.com/hyperopt/hyperopt}
 NULL
 
 
