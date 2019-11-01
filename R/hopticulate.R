@@ -20,10 +20,10 @@ Ops.hyperopt.pyll.base.Apply <- function(e1, e2) {
   else if(left) {
     m <- switch(
       .Generic,
-      "+"=as.name("__add__"),
-      "-"=as.name("__sub__"),
-      "*"=as.name("__mul__"),
-      "/"=as.name("__div__"),
+      "+"="__add__",
+      "-"="__sub__",
+      "*"="__mul__",
+      "/"="__div__",
       stop("Unsupported operator for hyperopt:", .Generic))
 
     x <- e1
@@ -32,14 +32,16 @@ Ops.hyperopt.pyll.base.Apply <- function(e1, e2) {
   else if (right) {
     m <- switch(
       .Generic,
-      "+"=as.name("__radd__"),
-      "-"=as.name("__rsub__"),
-      "*"=as.name("__rmul__"),
-      "/"=as.name("__rdiv__"),
+      "+"="__radd__",
+      "-"="__rsub__",
+      "*"="__rmul__",
+      "/"="__rdiv__",
       stop("Unsupported operator for hyperopt:", .Generic))
     x <- e2
     y <- e1
   }
+
+  m <- as.name(m)
 
   eval(substitute(x$m(y)))
 }
