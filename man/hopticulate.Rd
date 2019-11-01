@@ -4,6 +4,9 @@
 \name{hopticulate}
 \alias{hopticulate}
 \alias{hyperopt}
+\alias{hp}
+\alias{fmin}
+\alias{tpe}
 \alias{hopticulate-package}
 \title{Hyperopt via reticulate}
 \description{
@@ -13,6 +16,10 @@ tuning.
 \details{
 This package, `hopticulate`, is a minimal wrapper for using hyperopt
 through the most excellent reticulate package.
+}
+\examples{
+fmin(function(x) (x - 1)**2, hp$normal("mu", 0, 1), algo=tpe$suggest, max_evals=10)
+
 }
 \references{
 \url{https://github.com/hyperopt/hyperopt}

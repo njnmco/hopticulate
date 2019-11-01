@@ -8,7 +8,10 @@
 #'
 #' @name hopticulate
 #' @docType package
-#' @aliases hyperopt
+#' @aliases hyperopt hp fmin tpe
+#'
+#' @examples
+#' fmin(function(x) (x - 1)**2, hp$normal("mu", 0, 1), algo=tpe$suggest, max_evals=10)
 #'
 #' @references \url{https://github.com/hyperopt/hyperopt}
 NULL
