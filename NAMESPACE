@@ -1,2 +1,2 @@
-exportPattern("^[[:alpha:]]+")
+export(hyperopt, hp, fmin, tpe)
 S3method(Ops, hyperopt.pyll.base.Apply)
