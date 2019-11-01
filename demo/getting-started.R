@@ -19,7 +19,7 @@ objective <- function(args){
 # Define a search space.
 space = hp$choice('a',
                     list(
-                      list('case 1', hp$lognormal('c1', 0, 1) + 1),
+                      list('case 1', 1 + hp$lognormal('c1', 0, 1)),
                       list('case 2', hp$uniform('c2', -10, 10))
                     )
                   )
