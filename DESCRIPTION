@@ -1,19 +1,19 @@
 Package: hopticulate
 Type: Package
-Title: Hyperparamter Tuning via TPE
+Title: Hyperparameter Tuning via 'TPE'
 Version: 0.1.0
 Author: 
   James Bergstra <james.bergstra@gmail.com> for original hyperopt package
   Neal Fultz <nfultz@gmail.com> for hopticulate package
 Maintainer: Neal Fultz <nfultz@gmail.com>
-Description: Hyperparam tuning using the `hyperopt` python package described in Bergens, Yamins and Cox 2013.
+Description: Hyperparameter tuning using the 'hyperopt' python package described in Bergens, Yamins and Cox 2013.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 SystemRequirements: hyperopt
 URL: 
   https://github.com/hyperopt/hyperopt
-  https://github.com/nfultz/hopticulate
+  https://github.com/njnmco/hopticulate
 Imports: 
   utils,
   reticulate
