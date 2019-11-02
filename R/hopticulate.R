@@ -20,10 +20,9 @@ NULL
 delayedAssign("hyperopt", reticulate::import("hyperopt", delay_load = TRUE))
 
 
-for(i in c('hp', 'fmin', 'tpe'))
-  delayedAssign(i, hyperopt[[i]], eval.env = list2env(list(i=i)))
-
-rm(i)
+delayedAssign("hp", hyperopt[["hp"]])
+delayedAssign("fmin", hyperopt[["fmin"]])
+delayedAssign("tpe", hyperopt[["tpe"]])
 
 
 Ops.hyperopt.pyll.base.Apply <- function(e1, e2) {
