@@ -10,11 +10,9 @@ Description: Hyperparameter tuning using the 'hyperopt' python package described
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-SystemRequirements: hyperopt
 URL: 
   https://github.com/hyperopt/hyperopt
   https://github.com/njnmco/hopticulate
 Imports: 
-  utils,
   reticulate
 RoxygenNote: 6.1.1

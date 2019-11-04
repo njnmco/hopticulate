@@ -16,13 +16,65 @@
 #' @references \url{https://github.com/hyperopt/hyperopt}
 NULL
 
-
+### Main package
 delayedAssign("hyperopt", reticulate::import("hyperopt", delay_load = TRUE))
 
 
-delayedAssign("hp", hyperopt[["hp"]])
+#' Search Space Definitions
+#'
+#'
+#'
+#'
+#' @rdname search-space
+#' @aliases hp hp.choice hp.pchoice hp.randint hp.uniformint
+#' @aliases hp.normal hp.lognormal hp.qnormal hp.qlognormal
+#' @aliases hp.uniform hp.loguniform hp.quniform hp.qloguniform
+delayedAssign("hp", hyperopt[["hp"]]) # Not actually exported, make below nicer
+
+delayedAssign("hp.choice", hp[["choice"]])
+delayedAssign("hp.pchoice", hp[["pchoice"]])
+
+delayedAssign("hp.randint", hp[["randint"]])
+delayedAssign("hp.uniformint", hp[["uniformint"]])
+
+
+delayedAssign("hp.normal", hp[["normal"]])
+delayedAssign("hp.lognormal", hp[["lognormal"]])
+delayedAssign("hp.qnormal", hp[["qnormal"]])
+delayedAssign("hp.qlognormal", hp[["qlognormal"]])
+
+delayedAssign("hp.uniform", hp[["uniform"]])
+delayedAssign("hp.loguniform", hp[["loguniform"]])
+delayedAssign("hp.quniform", hp[["quniform"]])
+delayedAssign("hp.qloguniform", hp[["qloguniform"]])
+
+
+
+#' Hyperparameter tuning
+#'
+#' @rdname search-strategies
+#' @aliases fmin hyperopt.space_eval
 delayedAssign("fmin", hyperopt[["fmin"]])
-delayedAssign("tpe", hyperopt[["tpe"]])
+delayedAssign("space_eval", hyperopt[["space_eval"]])
+
+
+#' Search strategies
+#'
+#' @rdname search-strategies
+#' @aliases tpe.suggest rand.suggest anneal.suggest mix.suggest
+delayedAssign("tpe.suggest", hyperopt[["tpe"]][["suggest"]])
+delayedAssign("rand.suggest", hyperopt[["rand"]][["suggest"]])
+delayedAssign("anneal.suggest", hyperopt[["anneal"]][["suggest"]])
+
+
+mix.suggest <- function(...) {
+  p_suggest <- list(...)
+  p_suggest <- mapply(tuple,
+                      p_suggest[seq(1, length(p_suggest), 2)],
+                      p_suggest[seq(2, length(p_suggest), 2)])
+  function(...) hyperopt$mix$suggest(..., p_suggest = p_suggest)
+}
+
 
 
 Ops.hyperopt.pyll.base.Apply <- function(e1, e2) {
