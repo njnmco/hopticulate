@@ -17,7 +17,7 @@
 NULL
 
 ### Main package
-delayedAssign("hyperopt", try(reticulate::import("hyperopt", delay_load = TRUE)))
+delayedAssign("hyperopt", tryCatch(reticulate::import("hyperopt"), error=function(x) NULL))
 
 
 #' Search Space Definitions

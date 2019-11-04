@@ -21,7 +21,7 @@ install.packages("hopticulate")
 You can install the development version of hopticulate from GitHub with:
 
 ``` r
-devtools::install_github("njnmco/hopticulate")
+remotes::install_github("njnmco/hopticulate")
 ```
 
 
