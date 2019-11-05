@@ -8,5 +8,13 @@
 \alias{mix.suggest}
 \title{Search strategies}
 \description{
-Search strategies
+The following search strategies are available:
+}
+\details{
+\describe{
+\item{ \code{tpe.suggest}}{ Tree of Parzen Estimator}
+\item{ \code{rand.suggest}}{Random Search}
+\item{ \code{anneal.suggest}}{Simulated Annealing}
+\item{ \code{mix.suggest}}{Mixed strategy (given a sequence of probability / pure-strategy pairs in \code{...}). }
+}
 }

@@ -17,5 +17,38 @@
 \alias{hp.qloguniform}
 \title{Search Space Definitions}
 \description{
-Search Space Definitions
+Declare a search space using the following:
+}
+\details{
+\itemize{
+
+\item Discrete choices
+  \itemize{
+    \item \code{hp.choice}
+    \item \code{hp.pchoice}
+  }
+
+\item Integers
+  \itemize{
+    \item \code{hp.randint}
+    \item \code{hp.uniformint}
+  }
+
+\item Normal
+  \itemize{
+    \item \code{hp.normal}
+    \item \code{hp.lognormal}
+    \item \code{hp.qnormal}
+    \item \code{hp.qlognormal}
+  }
+
+\item Uniform
+  \itemize{
+    \item \code{hp.uniform}
+    \item \code{hp.loguniform}
+    \item \code{hp.quniform}
+    \item \code{hp.qloguniform}
+  }
+
+}
 }

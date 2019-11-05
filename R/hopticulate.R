@@ -1,14 +1,14 @@
 #' Hyperopt via reticulate
 #'
-#' `hyperopt` is a popular python package for automated hyperparameter
+#' \code{hyperopt} is a popular python package for automated hyperparameter
 #' tuning.
 #'
-#' This package, `hopticulate`, is a minimal wrapper for using hyperopt
-#' through the most excellent reticulate package.
+#' This package, \code{hopticulate}, is a minimal wrapper for using \code{hyperopt}
+#' through the most excellent \code{reticulate} package.
 #'
 #' @name hopticulate
 #' @docType package
-#' @aliases hyperopt fmin space_eval
+#' @aliases hyperopt fmin space_eval Trial
 #'
 #' @examples
 #' \dontshow{ if(!is.null(fmin))   }
@@ -29,11 +29,43 @@ delayedAssign("hyperopt", tryCatch(reticulate::import("hyperopt"),
 
 delayedAssign("fmin", hyperopt[["fmin"]])
 delayedAssign("space_eval", hyperopt[["space_eval"]])
-
+delayedAssign("Trial", hyperopt[["Trial"]])
 
 #' Search Space Definitions
 #'
+#' Declare a search space using the following:
 #'
+#' \itemize{
+#'
+#'   \item Discrete choices
+#'   \itemize{
+#'     \item \code{hp.choice}
+#'     \item \code{hp.pchoice}
+#'   }
+#'
+#'   \item Integers
+#'   \itemize{
+#'     \item \code{hp.randint}
+#'     \item \code{hp.uniformint}
+#'   }
+#'
+#'   \item Normal
+#'   \itemize{
+#'     \item \code{hp.normal}
+#'     \item \code{hp.lognormal}
+#'     \item \code{hp.qnormal}
+#'     \item \code{hp.qlognormal}
+#'   }
+#'
+#'   \item Uniform
+#'   \itemize{
+#'     \item \code{hp.uniform}
+#'     \item \code{hp.loguniform}
+#'     \item \code{hp.quniform}
+#'     \item \code{hp.qloguniform}
+#'   }
+#'
+#' }
 #'
 #' @name search-space
 #' @aliases hp hp.choice hp.pchoice hp.randint hp.uniformint hp.normal hp.lognormal hp.qnormal hp.qlognormal hp.uniform hp.loguniform hp.quniform hp.qloguniform
@@ -60,6 +92,15 @@ delayedAssign("hp.qloguniform", hp[["qloguniform"]])
 
 
 #' Search strategies
+#'
+#' The following search strategies are available:
+#'
+#' \describe{
+#' \item{ \code{tpe.suggest}}{ Tree of Parzen Estimator}
+#' \item{ \code{rand.suggest}}{Random Search}
+#' \item{ \code{anneal.suggest}}{Simulated Annealing}
+#' \item{ \code{mix.suggest}}{Mixed strategy (given a sequence of probability / pure-strategy pairs in \code{...}). }
+#' }
 #'
 #' @name search-strategies
 #' @aliases tpe.suggest rand.suggest anneal.suggest mix.suggest

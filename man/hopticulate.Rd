@@ -6,15 +6,16 @@
 \alias{hyperopt}
 \alias{fmin}
 \alias{space_eval}
+\alias{Trial}
 \alias{hopticulate-package}
 \title{Hyperopt via reticulate}
 \description{
-`hyperopt` is a popular python package for automated hyperparameter
+\code{hyperopt} is a popular python package for automated hyperparameter
 tuning.
 }
 \details{
-This package, `hopticulate`, is a minimal wrapper for using hyperopt
-through the most excellent reticulate package.
+This package, \code{hopticulate}, is a minimal wrapper for using \code{hyperopt}
+through the most excellent \code{reticulate} package.
 }
 \examples{
 \dontshow{ if(!is.null(fmin))   }
