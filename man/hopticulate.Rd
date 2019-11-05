@@ -17,7 +17,8 @@ This package, `hopticulate`, is a minimal wrapper for using hyperopt
 through the most excellent reticulate package.
 }
 \examples{
-fmin(function(x) (x - 1)**2, hp$normal("mu", 0, 1), algo=tpe$suggest, max_evals=10)
+\dontshow{ if(!is.null(fmin))   }
+  fmin(function(x) (x - 1)**2, hp.normal("mu", 0, 1), algo=tpe.suggest, max_evals=10)
 
 }
 \references{
