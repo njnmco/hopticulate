@@ -20,7 +20,8 @@ NULL
 ### Main package
 delayedAssign("hyperopt", tryCatch(reticulate::import("hyperopt"),
                                    error=function(x) {
-                                     message("Could not import hyperopt.\n")
+                                     if (!identical(Sys.getenv("NOT_CRAN"), "true"))
+                                         message("Could not import hyperopt.\n")
                                      NULL
                                    }))
 
