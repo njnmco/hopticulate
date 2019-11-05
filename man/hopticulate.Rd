@@ -4,9 +4,8 @@
 \name{hopticulate}
 \alias{hopticulate}
 \alias{hyperopt}
-\alias{hp}
 \alias{fmin}
-\alias{tpe}
+\alias{space_eval}
 \alias{hopticulate-package}
 \title{Hyperopt via reticulate}
 \description{

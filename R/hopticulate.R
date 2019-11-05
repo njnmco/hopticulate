@@ -8,7 +8,7 @@
 #'
 #' @name hopticulate
 #' @docType package
-#' @aliases hyperopt hp fmin tpe
+#' @aliases hyperopt fmin space_eval
 #'
 #' @examples
 #' fmin(function(x) (x - 1)**2, hp$normal("mu", 0, 1), algo=tpe$suggest, max_evals=10)
@@ -19,17 +19,21 @@ NULL
 ### Main package
 delayedAssign("hyperopt", tryCatch(reticulate::import("hyperopt"),
                                    error=function(x) {
-                                     warning("Could not import hyperopt.")
+                                     message("Could not import hyperopt.\n")
                                      NULL
-                                  }))
+                                   }))
+
+
+
+delayedAssign("fmin", hyperopt[["fmin"]])
+delayedAssign("space_eval", hyperopt[["space_eval"]])
 
 
 #' Search Space Definitions
 #'
 #'
 #'
-#'
-#' @rdname search-space
+#' @name search-space
 #' @aliases hp hp.choice hp.pchoice hp.randint hp.uniformint
 #' @aliases hp.normal hp.lognormal hp.qnormal hp.qlognormal
 #' @aliases hp.uniform hp.loguniform hp.quniform hp.qloguniform
@@ -54,17 +58,10 @@ delayedAssign("hp.qloguniform", hp[["qloguniform"]])
 
 
 
-#' Hyperparameter tuning
-#'
-#' @rdname search-strategies
-#' @aliases fmin hyperopt.space_eval
-delayedAssign("fmin", hyperopt[["fmin"]])
-delayedAssign("space_eval", hyperopt[["space_eval"]])
-
 
 #' Search strategies
 #'
-#' @rdname search-strategies
+#' @name search-strategies
 #' @aliases tpe.suggest rand.suggest anneal.suggest mix.suggest
 delayedAssign("tpe.suggest", hyperopt[["tpe"]][["suggest"]])
 delayedAssign("rand.suggest", hyperopt[["rand"]][["suggest"]])
@@ -73,7 +70,7 @@ delayedAssign("anneal.suggest", hyperopt[["anneal"]][["suggest"]])
 
 mix.suggest <- function(...) {
   p_suggest <- list(...)
-  p_suggest <- mapply(tuple,
+  p_suggest <- mapply(reticulate::tuple,
                       p_suggest[seq(1, length(p_suggest), 2)],
                       p_suggest[seq(2, length(p_suggest), 2)])
   function(...) hyperopt$mix$suggest(..., p_suggest = p_suggest)
