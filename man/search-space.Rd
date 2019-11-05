@@ -7,6 +7,14 @@
 \alias{hp.pchoice}
 \alias{hp.randint}
 \alias{hp.uniformint}
+\alias{hp.normal}
+\alias{hp.lognormal}
+\alias{hp.qnormal}
+\alias{hp.qlognormal}
+\alias{hp.uniform}
+\alias{hp.loguniform}
+\alias{hp.quniform}
+\alias{hp.qloguniform}
 \title{Search Space Definitions}
 \description{
 Search Space Definitions

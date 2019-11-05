@@ -35,9 +35,7 @@ delayedAssign("space_eval", hyperopt[["space_eval"]])
 #'
 #'
 #' @name search-space
-#' @aliases hp hp.choice hp.pchoice hp.randint hp.uniformint
-#' @aliases hp.normal hp.lognormal hp.qnormal hp.qlognormal
-#' @aliases hp.uniform hp.loguniform hp.quniform hp.qloguniform
+#' @aliases hp hp.choice hp.pchoice hp.randint hp.uniformint hp.normal hp.lognormal hp.qnormal hp.qlognormal hp.uniform hp.loguniform hp.quniform hp.qloguniform
 delayedAssign("hp", hyperopt[["hp"]]) # Not actually exported, make below nicer
 
 delayedAssign("hp.choice", hp[["choice"]])
@@ -76,7 +74,6 @@ mix.suggest <- function(...) {
                       p_suggest[seq(2, length(p_suggest), 2)])
   function(...) hyperopt$mix$suggest(..., p_suggest = p_suggest)
 }
-
 
 
 Ops.hyperopt.pyll.base.Apply <- function(e1, e2) {
