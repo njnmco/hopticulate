@@ -29,7 +29,7 @@ delayedAssign("hyperopt", tryCatch(reticulate::import("hyperopt"),
 
 delayedAssign("fmin", hyperopt[["fmin"]])
 delayedAssign("space_eval", hyperopt[["space_eval"]])
-delayedAssign("Trial", hyperopt[["Trial"]])
+delayedAssign("Trials", hyperopt[["Trials"]])
 
 #' Search Space Definitions
 #'
