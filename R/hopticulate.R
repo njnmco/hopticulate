@@ -8,7 +8,7 @@
 #'
 #' @name hopticulate
 #' @docType package
-#' @aliases hyperopt fmin space_eval Trial
+#' @aliases hyperopt fmin space_eval Trial pyll.stochastic.sample
 #'
 #' @examples
 #' \dontshow{ if(!is.null(fmin))   }
@@ -30,6 +30,7 @@ delayedAssign("hyperopt", tryCatch(reticulate::import("hyperopt"),
 delayedAssign("fmin", hyperopt[["fmin"]])
 delayedAssign("space_eval", hyperopt[["space_eval"]])
 delayedAssign("Trials", hyperopt[["Trials"]])
+delayedAssign("pyll.stochastic.sample", hyperopt[["pyll"]][["stochastic"]][["sample"]])
 
 #' Search Space Definitions
 #'

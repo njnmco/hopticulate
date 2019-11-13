@@ -1,4 +1,4 @@
-export(fmin, space_eval, Trials)
+export(fmin, space_eval, Trials, pyll.stochastic.sample)
 exportPattern("^hp[.]")
 exportPattern("[.]suggest$")
 S3method(Ops, hyperopt.pyll.base.Apply)
