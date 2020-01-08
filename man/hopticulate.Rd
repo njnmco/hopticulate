@@ -6,7 +6,7 @@
 \alias{hyperopt}
 \alias{fmin}
 \alias{space_eval}
-\alias{Trial}
+\alias{Trials}
 \alias{pyll.stochastic.sample}
 \alias{hopticulate-package}
 \title{Hyperopt via reticulate}

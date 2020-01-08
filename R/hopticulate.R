@@ -8,7 +8,7 @@
 #'
 #' @name hopticulate
 #' @docType package
-#' @aliases hyperopt fmin space_eval Trial pyll.stochastic.sample
+#' @aliases hyperopt fmin space_eval Trials pyll.stochastic.sample
 #'
 #' @examples
 #' \dontshow{ if(!is.null(fmin))   }
