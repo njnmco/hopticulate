@@ -19,10 +19,7 @@ NULL
 
 ### Main package
 delayedAssign("hyperopt", tryCatch(reticulate::import("hyperopt"),
-                                   error=function(x) {
-                                     if(interactive()) message("Could not import hyperopt.\n")
-                                     NULL
-                                   }))
+                                   error=function(x) NULL))
 
 
 
