@@ -19,8 +19,9 @@ This package, \code{hopticulate}, is a minimal wrapper for using \code{hyperopt}
 through the most excellent \code{reticulate} package.
 }
 \examples{
-\dontshow{ if(!is.null(fmin))   }
+\dontrun{
   fmin(function(x) (x - 1)**2, hp.normal("mu", 0, 1), algo=tpe.suggest, max_evals=10)
+}
 
 }
 \references{

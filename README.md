@@ -24,6 +24,14 @@ You can install the development version of hopticulate from GitHub with:
 remotes::install_github("njnmco/hopticulate")
 ```
 
+### Python package installation
+
+You will also need to install the python package, at least until CRAN approves some way of doing so automatically:
+
+```r
+reticulate::py_install("hyperopt")
+```
+
 
 ## Example
 

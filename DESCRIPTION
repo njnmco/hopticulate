@@ -6,7 +6,8 @@ Author:
   James Bergstra <james.bergstra@gmail.com> for original hyperopt package
   Neal Fultz <nfultz@gmail.com> for hopticulate package
 Maintainer: Neal Fultz <nfultz@gmail.com>
-Description: Hyperparameter tuning using the 'hyperopt' python package described in Bergstra, Yamins and Cox 2013.
+Description: Hyperparameter tuning using the 'hyperopt' python package described in Bergstra, Yamins and Cox (2013) <doi:10.5555/3042817>.
+  Tree-structured Parzen estimators (as well as random sampling and simulated annealing strategies) are provided to efficiently search parameter spaces.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

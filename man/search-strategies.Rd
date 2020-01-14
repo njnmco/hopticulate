@@ -7,14 +7,20 @@
 \alias{anneal.suggest}
 \alias{mix.suggest}
 \title{Search strategies}
+\arguments{
+\item{...}{For \code{mix.suggest}, an alternating sequence of pure strategies and weights.}
+}
+\value{
+the next point in a search space to evaluate; or for \code{mix.suggest}, a suggestion function.
+}
 \description{
 The following search strategies are available:
 }
 \details{
 \describe{
-\item{ \code{tpe.suggest}}{ Tree of Parzen Estimator}
-\item{ \code{rand.suggest}}{Random Search}
-\item{ \code{anneal.suggest}}{Simulated Annealing}
-\item{ \code{mix.suggest}}{Mixed strategy (given a sequence of probability / pure-strategy pairs in \code{...}). }
+\item{\code{tpe.suggest}}{Tree-structured Parzen Estimator}
+\item{\code{rand.suggest}}{Random Search}
+\item{\code{anneal.suggest}}{Simulated Annealing}
+\item{\code{mix.suggest}}{Mixed strategy (given a sequence of probability / pure-strategy pairs in \code{...}). }
 }
 }

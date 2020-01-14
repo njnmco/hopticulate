@@ -11,8 +11,9 @@
 #' @aliases hyperopt fmin space_eval Trials pyll.stochastic.sample
 #'
 #' @examples
-#' \dontshow{ if(!is.null(fmin))   }
+#' \dontrun{
 #'   fmin(function(x) (x - 1)**2, hp.normal("mu", 0, 1), algo=tpe.suggest, max_evals=10)
+#' }
 #'
 #' @references \url{https://github.com/hyperopt/hyperopt}
 NULL
@@ -74,7 +75,6 @@ delayedAssign("hp.pchoice", hp[["pchoice"]])
 delayedAssign("hp.randint", hp[["randint"]])
 delayedAssign("hp.uniformint", hp[["uniformint"]])
 
-
 delayedAssign("hp.normal", hp[["normal"]])
 delayedAssign("hp.lognormal", hp[["lognormal"]])
 delayedAssign("hp.qnormal", hp[["qnormal"]])
@@ -93,11 +93,14 @@ delayedAssign("hp.qloguniform", hp[["qloguniform"]])
 #' The following search strategies are available:
 #'
 #' \describe{
-#' \item{ \code{tpe.suggest}}{ Tree of Parzen Estimator}
-#' \item{ \code{rand.suggest}}{Random Search}
-#' \item{ \code{anneal.suggest}}{Simulated Annealing}
-#' \item{ \code{mix.suggest}}{Mixed strategy (given a sequence of probability / pure-strategy pairs in \code{...}). }
+#' \item{\code{tpe.suggest}}{Tree-structured Parzen Estimator}
+#' \item{\code{rand.suggest}}{Random Search}
+#' \item{\code{anneal.suggest}}{Simulated Annealing}
+#' \item{\code{mix.suggest}}{Mixed strategy (given a sequence of probability / pure-strategy pairs in \code{...}). }
 #' }
+#'
+#' @param  ... For \code{mix.suggest}, an alternating sequence of pure strategies and weights.
+#' @return  the next point in a search space to evaluate; or for \code{mix.suggest}, a suggestion function.
 #'
 #' @name search-strategies
 #' @aliases tpe.suggest rand.suggest anneal.suggest mix.suggest
